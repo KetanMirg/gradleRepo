@@ -1,0 +1,66 @@
+
+// task , example. Appears in the gradle tasks
+task ('hello').doLast{
+    println "hello world"
+}
+
+void sayHello(){
+    println "How you doin!"
+}
+
+sayHello()
+
+// def in groovy = object in java
+def s = new String("abc")
+
+println "The value of String is : ${s}"
+
+class Person{
+    private int id;
+    private String name;
+    Person(int id,String name){
+        this.id= id;
+        this.name=name;
+    }
+
+    @Override
+    String toString() {
+        // String interpolation
+        return "id - ${this.id}, name- ${this.name}"
+    }
+}
+
+def p1 = new Person(3,'Ketan')
+println p1
+// getters and setters are called implicitly, directly accessible
+p1.name = "Aashi"
+
+println p1
+
+// * Groovy checks for the types at runtime, kotlin and java does type checking at compile time
+
+// Topic - Closures
+// Closures - These are like methods in java,
+// returns the last statement in the definition, prints null in this case
+def echoIt = {}
+
+println echoIt()
+
+// Parameterised closures
+
+def myClosure = { String parameter ->
+    println parameter
+}
+myClosure("Hello there!")
+
+// Closure using implicit parameter - "it"
+
+def closureUsingIt = {println it}
+println closureUsingIt("Print it")
+
+
+
+
+
+
+

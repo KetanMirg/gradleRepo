@@ -41,22 +41,61 @@ println p1
 
 // Topic - Closures
 // Closures - These are like methods in java,
-// returns the last statement in the definition, prints null in this case
+//  1. returns the last statement in the definition, prints null in this case
 def echoIt = {}
 
 println echoIt()
 
-// Parameterised closures
+// 2. Parameterised closures
 
 def myClosure = { String parameter ->
     println parameter
 }
 myClosure("Hello there!")
 
-// Closure using implicit parameter - "it"
+//3. Closure using implicit parameter - "it"
 
 def closureUsingIt = {println it}
 println closureUsingIt("Print it")
+
+//4. using Closure as a Type instead of def
+Closure multiArgsClosure = {a,b,c ->
+    println a
+    println b
+    println c
+}
+multiArgsClosure("hey","you","there")
+
+//5. Single argument closure
+
+def generalMethod(Closure c){
+    c() * 3
+}
+// here {10} is a closure
+println generalMethod {10}   // this can also be called as generalMethod({10}) , brackets can be ignored in method calls in groovy
+
+// 6. Two args method in which one is closure
+
+def twoArgsMethod(factor,closure){
+    println closure() * factor
+}
+ println twoArgsMethod (5, {30})  // closure is always the last argument passed to a multi args method in groovy
+ twoArgsMethod 10, {30}
+
+//7.  Closures are used at many places in gradle scripts eg.
+[1,2,3,4].each {
+    println it
+}
+
+// 8. Closure Resolution - closure keeps the reference of the context
+String name = "abc"
+def meth1(Closure c){
+    c()
+}
+
+meth1({println name})
+name = "pqr"
+meth1({println name})
 
 
 

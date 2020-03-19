@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8346aca-5cd9-4934-bf6d-bc1d21d1a921" name="Default Changelist" comment="" />
+    <list default="true" id="a8346aca-5cd9-4934-bf6d-bc1d21d1a921" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/gradleRepo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,12 +71,20 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="other" type="c8890929:TasksNode$1" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="gradleProject" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GroovyConsoleState">
     <option name="list">
@@ -80,19 +97,21 @@
     </option>
   </component>
   <component name="ProjectId" id="1VvTODbYTCZ8XfZn4Q1bpf8KTgF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="external.system.task.project.file.to.start" value="$PROJECT_DIR$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Gradle.build">
+  <component name="RunManager" selected="Gradle.gradleProject">
     <configuration name="C:/TA/gradleProject [hello]" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -153,7 +172,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
+        <option name="scriptParameters" value="-i" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -167,12 +186,31 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="gradleProject" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true" temporary="true">
+    <configuration name="gradleProject [hi]" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true" nameIsGenerated="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="hi" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="gradleProject" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -184,10 +222,91 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="myStartProcess" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="myStartProcess" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="printTask" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="printTask" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="propertyTaskEg" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="propertyTaskEg" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="task-hi" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-i" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="hi" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Gradle.task-hi" />
+      <item itemvalue="Gradle.printTask" />
+      <item itemvalue="Gradle.propertyTaskEg" />
+      <item itemvalue="Gradle.gradleProject [hi]" />
       <item itemvalue="Gradle.Plugin" />
       <item itemvalue="Gradle.C:/TA/gradleProject [hello]" />
       <item itemvalue="Gradle.build" />
+      <item itemvalue="Gradle.myStartProcess" />
       <item itemvalue="Gradle.gradleProject" />
     </list>
     <recent_temporary>
@@ -221,6 +340,9 @@
       <workItem from="1578132548814" duration="3694000" />
       <workItem from="1583342063302" duration="526000" />
       <workItem from="1583342702452" duration="3700000" />
+      <workItem from="1583430952653" duration="44000" />
+      <workItem from="1583491786934" duration="64000" />
+      <workItem from="1584285475324" duration="22773000" />
     </task>
     <servers />
   </component>
@@ -228,38 +350,74 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="368" y="0" key="#build" timestamp="1583413881730">
+    <state x="368" y="0" key="#build" timestamp="1584619972631">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="368" y="0" key="#build/0.0.1280.689@0.0.1280.689" timestamp="1583413881730" />
-    <state x="96" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583346214737">
+    <state x="368" y="0" key="#build/0.0.1280.689@0.0.1280.689" timestamp="1584619972631" />
+    <state x="96" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584535502477">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="96" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1583346214737" />
-    <state x="368" y="0" key="#gradleProject" timestamp="1583413526107">
+    <state x="96" y="4" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.689@0.0.1280.689" timestamp="1584535502477" />
+    <state x="368" y="0" key="#gradleProject" timestamp="1584625113218">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state x="368" y="0" key="#gradleProject/0.0.1280.689@0.0.1280.689" timestamp="1583413526107" />
+    <state x="368" y="0" key="#gradleProject/0.0.1280.689@0.0.1280.689" timestamp="1584625113218" />
+    <state x="368" y="0" key="#gradleProject_[hi]" timestamp="1584514640272">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="368" y="0" key="#gradleProject_[hi]/0.0.1280.689@0.0.1280.689" timestamp="1584514640272" />
+    <state x="368" y="0" key="#myStartProcess" timestamp="1584619759119">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="368" y="0" key="#myStartProcess/0.0.1280.689@0.0.1280.689" timestamp="1584619759119" />
+    <state x="368" y="0" key="#printTask" timestamp="1584515139256">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="368" y="0" key="#printTask/0.0.1280.689@0.0.1280.689" timestamp="1584515139256" />
+    <state x="368" y="0" key="#propertyTaskEg" timestamp="1584620021931">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="368" y="0" key="#propertyTaskEg/0.0.1280.689@0.0.1280.689" timestamp="1584620021931" />
+    <state x="368" y="0" key="#task-hi" timestamp="1584514997715">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state x="368" y="0" key="#task-hi/0.0.1280.689@0.0.1280.689" timestamp="1584514997715" />
     <state x="421" y="104" key="FileChooserDialogImpl" timestamp="1583343047158">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="421" y="104" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1583343047158" />
-    <state width="1237" height="222" key="GridCell.Tab.0.bottom" timestamp="1583413881745">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1584625113235">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="222" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1583413881745" />
-    <state width="1237" height="222" key="GridCell.Tab.0.center" timestamp="1583413881745">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1584625113235" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1584625113234">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="222" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1583413881745" />
-    <state width="1237" height="222" key="GridCell.Tab.0.left" timestamp="1583413881745">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.689@0.0.1280.689" timestamp="1584625113234" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1584625113233">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="222" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1583413881745" />
-    <state width="1237" height="222" key="GridCell.Tab.0.right" timestamp="1583413881745">
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.689@0.0.1280.689" timestamp="1584625113233" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1584625113234">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
-    <state width="1237" height="222" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1583413881745" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1584625113234" />
+    <state width="1237" height="153" key="GridCell.Tab.1.bottom" timestamp="1584514643940">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="153" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1584514643940" />
+    <state width="1237" height="153" key="GridCell.Tab.1.center" timestamp="1584514643940">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="153" key="GridCell.Tab.1.center/0.0.1280.689@0.0.1280.689" timestamp="1584514643940" />
+    <state width="1237" height="153" key="GridCell.Tab.1.left" timestamp="1584514643940">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="153" key="GridCell.Tab.1.left/0.0.1280.689@0.0.1280.689" timestamp="1584514643940" />
+    <state width="1237" height="153" key="GridCell.Tab.1.right" timestamp="1584514643940">
+      <screen x="0" y="0" width="1280" height="689" />
+    </state>
+    <state width="1237" height="153" key="GridCell.Tab.1.right/0.0.1280.689@0.0.1280.689" timestamp="1584514643940" />
     <state x="144" y="0" key="SettingsEditor" timestamp="1583342382049">
       <screen x="0" y="0" width="1280" height="689" />
     </state>
@@ -268,5 +426,16 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="303" y="10" width="672" height="678" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1583412561963" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/build.gradle</url>
+          <line>173</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

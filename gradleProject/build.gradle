@@ -1,3 +1,20 @@
+/*
+Gradle commands help
+1) $ gradle help --task build    - where build is the task name
+2) You can use the Gradle Task Tree Plugin to see the task dependencies
+eg:
+plugins {
+    id "com.dorongold.task-tree" version "1.3.1"
+}
+Then run
+$ gradle build taskTree   - where build is the task name
+
+3) $ gradle build --console=plain
+4)
+* */
+
+//out of many tasks covered later, default tasks can be set here
+defaultTasks "propertyTaskEg"
 
 // task , example. Appears in the gradle tasks
 task ('hello').doLast{
@@ -97,6 +114,152 @@ meth1({println name})
 name = "pqr"
 meth1({println name})
 
+// Topic - Gradle Objects
+// 1)Script 2)Project 3)Gradle 4)Settings 5)Tasks 6)Action
+
+// Gradle Objects Lifecycle - Initialization,Configuration,Execution
+// 1) Initialization - All the files with *.gradle extensions and inside the init.d folder
+// of GRADLE_HOME gets executed alphabetically during initialization phase
+
+// Objects access during phases
+
+// build.gradle -> configuration phase -> has access to Script objects -> delegates to Settings object
+// settings.gradle -> initialization phase -> has access to Script objects -> delegates to Project object
+// init.gradle -> initialization phase -> has access to Script objects -> delegates to Gradle object
+//Also Project object has access to Gradle object eg-
+logger.info "in script build.gradle delegate object is Project and it has access to gradle object also as ${project.gradle.getGradleVersion()}"
+logger.info "Above example can also be written as ${gradle.getGradleVersion()} , since Project object is a delegate object"
+//Also Settings object has access to Gradle object
+
+/*
+What is a closure's delegate?
+When you set the delegate of a closure to another object, any calls to properties/methods which cannot be resolved within the closure's scope, will be resolved by the closure's delegate. In your example, greeting and printGreeting are undefined within the scope of the greetingClosure closure
+
+def greetingClosure = {
+    greeting = "Setting the greeting from a closure"
+    printGreeting()
+}
+So when you set the delegate of this closure to an instance of GroovyGreeter
+
+greetingClosure.delegate = myGroovyGreeter
+they are (successfully) resolved by this object because it does define a property and method with these names.
+*/
+
+// Topic - Properties
+// gradle.properties is used to determine project specific properties
+ // gradle.properties is present in the root of the project eg:
+logger.info("property name - ${projectName}")
+
+// its always best to check for the property before accessing it
+if(project.hasProperty("projectName")){
+    logger.info("property - ${projectName}")
+}
+else{
+    logger.info("No property as - projectName")
+}
+
+// Property can be added dynamically using ext keyword eg
+project.ext.propertyName  = "propertyValue"
+
+logger.info("Property Value - ${propertyName}")
+
+// Topic - Tasks and Actions
+
+// Topic Tasks - These accept and return closures and actions, and can be further called using . notation
+//declaring a task
+task hi
+
+// defining a task - once declared task can be accessed using project object
+project.hi.doLast {
+    logger.info "printing - hi"
+}
+
+// TAsk - conventional way of defining a task
+
+task ("printTask").doLast {
+    logger.info("printing - hi from printTask")
+}
+
+// Task - Accessing properties of a task
+// common way of defining a task
+task propertyTaskEg {
+    description = "What this task does!"
+    group = "practice" //All the tasks can be grouped using a common name
+    doLast { // doLast method of the propertyTaskEg - here propertyTaskEg is acting as a delegate object
+        logger.info "from the doLast method"
+    }
+    doFirst {
+        logger.info("1st doFirst action")
+    }
+}
+
+logger.info propertyTaskEg.description
+logger.info propertyTaskEg.group
+
+// Topic - Actions
+// Task - consists of multiple actions (doLast(),doFirst())
+// all the doLast actions are added in the end of existing doLast actions
+propertyTaskEg.doLast {
+    logger.info("2nd doLast action")
+}
+
+propertyTaskEg.doLast {
+    logger.info("3rd doLast action")
+}
+propertyTaskEg.doLast {
+    logger.info("4th doLast action")
+}
+
+//all the doFirst actions are added in the beggining of the existing doFirst actions
+propertyTaskEg.doFirst {
+    logger.info("2nd doFirst action")
+}
+propertyTaskEg.doFirst {
+    logger.info("3rd doFirst action")
+}
+
+// each task also returns a task object and hence method chaining can be done.eg-
+
+propertyTaskEg.doLast {
+    logger.info("Method chain - Test doLast action")
+}.doFirst {
+    logger.info("Method chain - Test doFirst action")
+}
+
+// Topic - Tasks Dependencies
+
+defaultTasks 'propertyTaskEg', 'myStartProcess', 'myProcess1', 'myMiddleProcess', 'myFinishProcess'
+
+task myStartProcess {
+    doLast {
+        logger.info("Start process")
+    }
+}
+// dependsOn is always given at the time of task declaring the task
+task myProcess1 (dependsOn: ['myStartProcess','myMiddleProcess'])  {
+    doLast {
+        logger.info("Process 1")
+    }
+}
+
+task myMiddleProcess {
+    doLast {
+        logger.info("Middle process")
+    }
+}
+
+//making myFinishProcess process dependent on  myMiddleProcess
+task myFinishProcess (dependsOn: 'myMiddleProcess') {
+    doLast {
+        logger.info("Finish process")
+    }
+}
+
+// making myProcess1 depend on 2 tasks   myStartProcess and myMiddleProcess
+// dependsOn is always given at the time of task declaring the task can be given here as myProcess1.doFirst (dependsOn: ['myStartProcess','myMiddleProcess']) {}
+myProcess1.doFirst {
+    logger.info("doFirst action of myProcess1")
+}
 
 
 

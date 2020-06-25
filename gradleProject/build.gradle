@@ -14,6 +14,10 @@ $ gradle build taskTree   - where build is the task name
 * */
 
 //out of many tasks covered later, default tasks can be set here
+plugins {
+    id 'java'
+}
+
 defaultTasks "propertyTaskEg"
 
 // task , example. Appears in the gradle tasks
@@ -21,11 +25,11 @@ task ('hello').doLast{
     println "hello world"
 }
 
-void sayHello(){
-    println "How you doin!"
+void sayHello(s){
+    println "How you doin! ${s}"
 }
 
-sayHello()
+sayHello "Ketan"
 
 // def in groovy = object in java
 def s = new String("abc")
@@ -120,16 +124,9 @@ meth1({println name})
 // Gradle Objects Lifecycle - Initialization,Configuration,Execution
 // 1) Initialization - All the files with *.gradle extensions and inside the init.d folder
 // of GRADLE_HOME gets executed alphabetically during initialization phase
-
+// All the *.gradle files implements the Script interface, meaning each file with .gradle extension has access to the Script object(which gives
+// access to a number of properties and methods from the Script object eg - logger object and apply method are available from the Script interface)
 // Objects access during phases
-
-// build.gradle -> configuration phase -> has access to Script objects -> delegates to Settings object
-// settings.gradle -> initialization phase -> has access to Script objects -> delegates to Project object
-// init.gradle -> initialization phase -> has access to Script objects -> delegates to Gradle object
-//Also Project object has access to Gradle object eg-
-logger.info "in script build.gradle delegate object is Project and it has access to gradle object also as ${project.gradle.getGradleVersion()}"
-logger.info "Above example can also be written as ${gradle.getGradleVersion()} , since Project object is a delegate object"
-//Also Settings object has access to Gradle object
 
 /*
 What is a closure's delegate?
@@ -144,6 +141,18 @@ So when you set the delegate of this closure to an instance of GroovyGreeter
 greetingClosure.delegate = myGroovyGreeter
 they are (successfully) resolved by this object because it does define a property and method with these names.
 */
+
+// build.gradle -> runs during configuration phase -> has access to Script objects -> delegates to Project object
+// settings.gradle -> runs during initialization phase -> has access to Script objects -> delegates to Settings object
+// init.gradle -> runs during initialization phase -> has access to Script objects -> delegates to Gradle object
+// Project and Settings objects have access to Gradle object
+
+// Delegate objects in the same script may vary depending on the phase of the build lifecycle
+//Also Project object has access to Gradle object eg-
+logger.info "in script build.gradle delegate object is Project and it has access to gradle object also as ${project.gradle.getGradleVersion()}"
+logger.info "Above example can also be written as ${gradle.getGradleVersion()} , since Project object is a delegate object"
+
+//Also Settings object has access to Gradle object
 
 // Topic - Properties
 // gradle.properties is used to determine project specific properties
@@ -260,6 +269,30 @@ task myFinishProcess (dependsOn: 'myMiddleProcess') {
 myProcess1.doFirst {
     logger.info("doFirst action of myProcess1")
 }
+
+// Topic - Task graph - provides the ability to know the sequence in which tasks are executed
+// graph is always an acyclic one else it gives a runtime exception
+// whenReady - Adds a closure to be called when this graph has been populated. This graph is passed to the closure as a parameter.
+//eg-
+gradle.taskGraph.whenReady { graph ->
+    if(graph.hasTask(myFinishProcess)){
+        project.version = "1.0"
+    }else{
+        version = "1.0-snapshot"   // project is available as delegate object, hence same as above
+    }
+}
+
+// beforeTask and afterTask are methods of graph which are executed before and after execution of each task
+
+gradle.taskGraph.beforeTask { task ->
+    logger.info(">> $task.name")
+}
+
+gradle.taskGraph.afterTask { task ->
+    logger.info(">> $task.name")
+}
+
+
 
 
 
